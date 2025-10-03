@@ -9,15 +9,15 @@ import { HousingService } from '../housing.service';
   standalone: true,
   imports: [CommonModule, HousingLocationComponent],
   template: `
-    <section>
-     <form>
-       <input type="text" placeholder="Filter by city" #filter/>
-       <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+    <section class="search-section">
+     <form class="search-form">
+       <input type="text" placeholder="filter by city" #filter/>
+       <button type="button" (click)="filterResults(filter.value)">Search</button>
      </form>
     </section>
     <section class="results">
+      <app-housing-location *ngFor="let housingLocation of filteredLocationsList" [housingLocation]="housingLocation"></app-housing-location>
     </section>
-    <app-housing-location *ngFor="let housingLocation of filteredLocationsList" [housingLocation]="housingLocation"></app-housing-location>
 
   `,
   styleUrls: ['./home.component.css']

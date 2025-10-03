@@ -1,42 +1,103 @@
-/* Put these styles in: src/home/home.component.css */
+/* Estilos mejorados para Home Component */
 
-.results {
-  display: grid;
-  column-gap: 14px;
-  row-gap: 14px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-  margin-top: 50px;
-  justify-content: space-around;
+/* Sección de búsqueda */
+.search-section {
+  background: linear-gradient(135deg, var(--accent-color), #f8f9ff);
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin: 20px 0 40px 0;
+  box-shadow: 0 10px 30px rgba(96, 93, 200, 0.1);
+}
+
+.search-form {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 input[type="text"] {
-  border: solid 1px var(--primary-color);
-  padding: 10px;
-  border-radius: 8px;
-  margin-right: 4px;
-  display: inline-block;
-  width: 30%;
+  border: 2px solid var(--primary-color);
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 350px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(96, 93, 200, 0.1);
+  background: white;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 6px 25px rgba(96, 93, 200, 0.2);
+  transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+  font-weight: 400;
 }
 
 button {
-  padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
+  padding: 15px 30px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  border-radius: 8px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(96, 93, 200, 0.3);
 }
 
-@media (min-width: 500px) and (max-width: 768px) {
-  .results {
-      grid-template-columns: repeat(2, 1fr);
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(96, 93, 200, 0.4);
+}
+
+/* Grid de resultados mejorado */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
   }
+  
   input[type="text"] {
-      width: 70%;
-  }   
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  .results {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
 }
 
-@media (max-width: 499px) {
+@media (max-width: 480px) {
+  .search-section {
+    margin: 10px 0 30px 0;
+    padding: 30px 15px;
+  }
+  
   .results {
-      grid-template-columns: 1fr;
-  }    
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }

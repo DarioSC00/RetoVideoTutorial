@@ -1,33 +1,100 @@
-/* Put these styles in: src/app/housing-location/housing-location.component.css */
+/* Estilos mejorados para las cartas de propiedades */
 
 .listing {
-  background: var(--accent-color);
-  border-radius: 30px;
-  padding-bottom: 30px;
-}
-.listing-heading {
-  color: var(--primary-color);
-  padding: 10px 20px 0 20px;
-}
-.listing-photo {
-  height: 250px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 30px 30px 0 0;
-}
-.listing-location {
-  padding: 10px 20px 20px 20px;
-}
-.listing-location::before {
-  content: url("/assets/location-pin.svg") / "";
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(96, 93, 200, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f5;
+  position: relative;
 }
 
-section.listing a {
-  padding-left: 20px;
-  text-decoration: none;
-  color: var(--primary-color);
+.listing:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(96, 93, 200, 0.2);
 }
-section.listing a::after {
-  content: "\203A";
-  margin-left: 5px;
+
+.listing-photo {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.listing:hover .listing-photo {
+  transform: scale(1.05);
+}
+
+.listing-content {
+  padding: 25px;
+}
+
+.listing-heading {
+  color: var(--primary-color);
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.listing-location {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.listing-location::before {
+  content: url("/assets/location-pin.svg") / "";
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.listing-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(96, 93, 200, 0.3);
+}
+
+.listing-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(96, 93, 200, 0.4);
+}
+
+.listing-link::after {
+  content: "→";
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.listing-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* Efecto de brillo en hover */
+.listing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.listing:hover::before {
+  left: 100%;
 }

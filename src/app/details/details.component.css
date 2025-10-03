@@ -1,73 +1,308 @@
-/* src/app/details/details.component.css */
+/* Estilos modernos para Details Component */
 
-.listing-photo {
-  height: 600px;
-  width: 50%;
-  object-fit: cover;
-  border-radius: 30px;
-  float: right;
+.details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.listing-heading {
-  font-size: 48pt;
+/* Back Button */
+.back-button-container {
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: white;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(96, 93, 200, 0.1);
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.back-button:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(96, 93, 200, 0.2);
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover .back-arrow {
+  transform: translateX(-3px);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--accent-color), #f8f9ff);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 40px rgba(96, 93, 200, 0.1);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.listing-info h1 {
+  font-size: 3.5rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.listing-location {
+  font-size: 1.5rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .listing-location::before {
   content: url('/assets/location-pin.svg') / '';
+  width: 24px;
+  height: 24px;
 }
 
-.listing-location {
-  font-size: 24pt;
-  margin-bottom: 15px;
+.listing-photo-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(96, 93, 200, 0.2);
 }
 
-.listing-features > .section-heading {
-  color: var(--secondary-color);
-  font-size: 24pt;
-  margin-bottom: 15px;
+.listing-photo {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
+.listing-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Features Section */
 .listing-features {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
-.listing-features li {
-  font-size: 14pt;
+.features-container {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(96, 93, 200, 0.1);
 }
 
-li {
-  list-style-type: none;
-}
-
-.listing-apply .section-heading {
-  font-size: 18pt;
-  margin-bottom: 15px;
-}
-
-label, input {
-  display: block;
-}
-label {
-  color: var(--secondary-color);
+.section-heading {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
   font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12pt;
 }
-input {
-  font-size: 16pt;
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, var(--accent-color), #f8f9ff);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(96, 93, 200, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(96, 93, 200, 0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
   margin-bottom: 15px;
-  padding: 10px;
-  width: 400px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: solid .3px;
 }
-@media (max-width: 1024px) {
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Application Form Section */
+.listing-apply {
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(96, 93, 200, 0.1);
+  overflow: hidden;
+}
+
+.apply-container {
+  padding: 50px 40px;
+}
+
+.apply-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.apply-header h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.apply-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.apply-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  text-transform: none;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e8e8e8;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 20px rgba(96, 93, 200, 0.2);
+  transform: translateY(-2px);
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(96, 93, 200, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(96, 93, 200, 0.4);
+}
+
+.btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+.submit-btn:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .listing-info h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .listing-location {
+    justify-content: center;
+  }
+  
   .listing-photo {
-    width: 100%;
-    height: 400px;
+    height: 300px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .apply-container {
+    padding: 30px 20px;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-container {
+    padding: 10px;
+  }
+  
+  .hero-section,
+  .features-container,
+  .listing-apply {
+    padding: 25px 20px;
+  }
+  
+  .listing-info h1 {
+    font-size: 2rem;
+  }
+  
+  .section-heading {
+    font-size: 1.5rem;
   }
 }
